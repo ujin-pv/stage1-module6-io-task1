@@ -1,5 +1,6 @@
 package com.epam.mjc.io;
 
+import javax.lang.model.element.Name;
 import java.util.Objects;
 
 public class Profile {
@@ -10,7 +11,10 @@ public class Profile {
     private Long phone;
 
     public Profile() {
-
+        name = "KgNbA";
+        email = "KgNbA";
+        age = 9;
+        phone = 9L;
     }
     public Profile(String name, Integer age, String email, Long phone) {
         this.name = name;
