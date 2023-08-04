@@ -23,8 +23,8 @@ public class FileReader {
                 if(flg) data[it] += (char)c;
                 if(c == ' ') flg = true;
             }
-            if (it == 4)
-               throw new IOException();
+            if (it != 4)
+               return new Profile();
         } catch (IOException e) {
             e.printStackTrace();
         }
