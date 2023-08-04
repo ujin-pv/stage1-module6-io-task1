@@ -24,8 +24,8 @@ public class FileReader {
                 if(c == ' ') flg = true;
             }
             if (it != 4)
-               return new Profile();
-        } catch (IOException e) {
+               throw new NumberFormatException();
+        } catch (IOException | NumberFormatException e) {
             e.printStackTrace();
         }
         return new Profile(data[0], Integer.parseInt(data[1]), data[2], Long.parseLong(data[3]));
