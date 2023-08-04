@@ -7,6 +7,8 @@ import java.io.IOException;
 
 public class FileReader {
 
+    private Profile last = null;
+
     public Profile getDataFromFile(File file) {
 
 
@@ -25,11 +27,12 @@ public class FileReader {
             }
             if (it != 4)
                throw new NumberFormatException();
-            return new Profile(data[0], Integer.parseInt(data[1]), data[2], Long.parseLong(data[3]));
+            last = new Profile(data[0], Integer.parseInt(data[1]), data[2], Long.parseLong(data[3]));
+
         } catch (IOException | NumberFormatException e) {
            e.getStackTrace();
         }
-        return null;
+        return last;
     }
 
 
