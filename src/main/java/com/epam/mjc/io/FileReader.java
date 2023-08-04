@@ -8,10 +8,10 @@ import java.io.IOException;
 public class FileReader {
 
     public Profile getDataFromFile(File file) {
-        String[] data = new String[] {"", "", "", ""};
+
 
         try (FileInputStream inputStream = new FileInputStream(file)){
-
+            String[] data = new String[] {"", "", "", ""};
             int c;
             boolean flg = false;
             int it = 0;
@@ -25,10 +25,12 @@ public class FileReader {
             }
             if (it != 4)
                throw new NumberFormatException();
+            return new Profile(data[0], Integer.parseInt(data[1]), data[2], Long.parseLong(data[3]));
         } catch (IOException | NumberFormatException e) {
-            e.printStackTrace();
+           e.getStackTrace();
         }
-        return new Profile(data[0], Integer.parseInt(data[1]), data[2], Long.parseLong(data[3]));
+        return null;
     }
+
 
 }
