@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class FileReader {
 
-    private Profile last = null;
+    private static Profile last = null;
 
     public Profile getDataFromFile(File file) {
 
